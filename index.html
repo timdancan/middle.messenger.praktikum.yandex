@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>d-messenger</title>
-    <link rel="stylesheet" href="style.scss" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-    <section class="login">
-        <div class="login__wrapper">
-            <h4 class="login__header">Вход</h4>
-            <form class="login__form">
-                <label class="login__label">
-                    <h4>Логин</h4>
-                    <input class="login__input" type="text" id="username">
-                </label>
-                <label class="login__label">
-                    <h4>Пароль</h4>
-                    <input class="login__input" type="password" id="password">
-                </label>
-                <div class="login__buttons">
-                    <button class="button login__button button_sign-in">Авторизоваться</button>
-                    <button class="button login__button button_sign-up">Нет аккаунта?</button>
-                </div>
-            </form>
-        </div>
-    </section>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./src/styles/style.scss" />
 
-</body>
+    <title>Messenger - Yandex Praktikum</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="index.js"></script>
+  </body>
 </html>
