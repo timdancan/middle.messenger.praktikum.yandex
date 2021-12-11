@@ -42,7 +42,7 @@ const serverError: Route = {
 };
 
 const loginPageRoute: Route = {
-  path: "/login",
+  path: "/sign-in",
   componentGetter: () => ({
     pageClass: LoginPage,
     props: {
@@ -72,7 +72,7 @@ const loginPageRoute: Route = {
 };
 
 const signupPageRoute: Route = {
-  path: "/signup",
+  path: "/sign-up",
   componentGetter: () => ({
     pageClass: SignupPage,
     props: {
