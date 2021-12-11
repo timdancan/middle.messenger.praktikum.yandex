@@ -12,8 +12,8 @@ This project helps me to figure out how frontend frameworks implemented and allo
 
 ### Available routes
 
-- /_login_
-- /_signin_
+- /_sign-up_
+- /_sign-in_
 - /_user-profile_
 - /_page-not-found_
 - /_server-error_
