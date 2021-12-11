@@ -1,5 +1,5 @@
 
-
+  
 # Global settings applied to the whole site.
 #
 # “base” is the directory to change to before starting build. If you set base:
@@ -8,30 +8,45 @@
 # “publish” is the directory to publish (relative to the root of your repo).
 
 [build]
-direction = "dist"
-command = "npm run build"
+  direction = "dist"
+  command = "npm run build"
 
 [[redirects]]
-from = "/signin"
-to = "/"
-status = 200
+  from = "/signup"
+  to = "/"
+  status = 200
 
 [[redirects]]
-from = "/client-error"
-to = "/"
-status = 200
+  from = "/client-error"
+  to = "/"
+  status = 200
 
 [[redirects]]
-from = "/server-error"
-to = "/"
-status = 200
+  from = "/server-error"
+  to = "/"
+  status = 200
 
 [[redirects]]
-from = "/login"
-to = "/"
-status = 200
+  from = "/login"
+  to = "/"
+  status = 200
 
 [[redirects]]
-from = "/user-profile"
-to = "/"
-status = 200
+  from = "/user-profile"
+  to = "/"
+  status = 200
+
+[[redirects]]
+  from = "/change-user-profile"
+  to = "/"
+  status = 200
+
+[[redirects]]
+  from = "/change-user-password"
+  to = "/"
+  status = 200
+
+[[redirects]]
+  from = "/messenger"
+  to = "/"
+  status = 200
