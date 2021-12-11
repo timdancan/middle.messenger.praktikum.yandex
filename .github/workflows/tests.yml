@@ -20,13 +20,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Сheck if the repository is private
-      run: exit 1
-      if: ${{github.event.repository.private}}
     - name: Get testing lib
       run: set -eu && git clone https://github.com/Yandex-Practicum/tests-second-floor.git
-    - name: Check dist and node_modules are not in .gitignore
-      run: bash tests-second-floor/sprint_1/check_gitignore.sh
     - name: Check npm run start existence
       run: bash tests-second-floor/sprint_1/check_start.sh
     - name: Check Parcel in start script
@@ -49,13 +44,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Сheck if the repository is private
-      run: exit 1
-      if: ${{github.event.repository.private}}
     - name: Get testing lib
       run: set -eu && git clone https://github.com/Yandex-Practicum/tests-second-floor.git
-    - name: Check dist and node_modules are not in .gitignore
-      run: bash tests-second-floor/sprint_1/check_gitignore.sh
     - name: Check npm run start existence
       run: bash tests-second-floor/sprint_1/check_start.sh
     - name: Check Parcel in start script
@@ -73,6 +63,8 @@ jobs:
       run: node tests-second-floor/sprint_2/check_eslint.js
     - name: Check stylelint
       run: node tests-second-floor/sprint_2/check_stylelint.js
+    - name: Check UI
+      run: bash tests-second-floor/sprint_2/ui_test.sh
       
   sprint_3:
     if: ${{github.head_ref == 'sprint_3'}}
@@ -87,9 +79,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Сheck if the repository is private
-      run: exit 1
-      if: ${{github.event.repository.private}}
     - name: Get testing lib
       run: set -eu && git clone https://github.com/Yandex-Practicum/tests-second-floor.git
     - name: Run the tests
@@ -108,9 +97,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Сheck if the repository is private
-      run: exit 1
-      if: ${{github.event.repository.private}}
     - name: Get testing lib
       run: set -eu && git clone https://github.com/Yandex-Practicum/tests-second-floor.git
     - name: Run the tests
