@@ -4,7 +4,7 @@ import { Props } from "./props.model";
 export interface Route {
   path: string;
   componentGetter: () => {
-    pageClass: any;
+    pageClass: Object;
     props?: Props & ObjectLiteral;
   };
 }

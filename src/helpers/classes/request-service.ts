@@ -1,3 +1,5 @@
+import { ObjectLiteral } from "../models/object-literal";
+
 export interface RequestOptions {
   retries?: number;
   method?: API_METHOD;
@@ -12,22 +14,15 @@ export enum API_METHOD {
   DELETE = "DELETE",
 }
 
-function queryStringify(data: Object) {
-  return Object.entries(data)
-    .reduce((acc: string[], [key, value]) => {
-      acc.push(acc.length === 0 ? "?" : "&");
+function queryStringify(data: ObjectLiteral) {
+  if (typeof data !== 'object') {
+    throw new Error('Data must be object');
+  }
 
-      acc.push(`${key}=`);
-
-      if (Array.isArray(value)) {
-        acc.push(value.map((item) => item.toString()).join(","));
-      } else {
-        acc.push(value.toString());
-      }
-
-      return acc;
-    }, [])
-    .join("");
+  const keys = Object.keys(data);
+  return keys.reduce((result, key, index) => {
+    return `${result}${key}=${data[key]}${index < keys.length - 1 ? '&' : ''}`;
+  }, '?');
 }
 
 export function fetch(url: string, options: RequestOptions) {
@@ -46,7 +41,7 @@ export function fetch(url: string, options: RequestOptions) {
     };
 
     const sendXhr = () => {
-      if (options.method === API_METHOD.GET || !options.data) {
+      if (!options.data) {
         try {
           xhr.send();
         } catch (err) {

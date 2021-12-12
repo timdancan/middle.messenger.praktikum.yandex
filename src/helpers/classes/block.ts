@@ -23,7 +23,7 @@ export default abstract class Block {
     [key: string]: CustomElementEvents;
   } = {};
 
-  constructor(props: any, tagName = "div", classNames: string[] = []) {
+  constructor(props: ObjectLiteral, tagName = "div", classNames: string[] = []) {
     this._meta = {
       tagName,
       props,
@@ -58,18 +58,18 @@ export default abstract class Block {
     this.eventBus.emit(Block.EVENTS.FLOW_RENDER);
   }
 
-  componentDidMount(_oldProps: any): void {
+  componentDidMount(_oldProps: ObjectLiteral): void {
     return;
   }
 
-  _componentDidUpdate(oldProps: any, newProps: any): void {
+  _componentDidUpdate(oldProps: ObjectLiteral, newProps: ObjectLiteral): void {
     const response = this.componentDidUpdate(oldProps, newProps);
     if (response) {
       this.eventBus.emit(Block.EVENTS.FLOW_RENDER);
     }
   }
 
-  componentDidUpdate(_oldProps: any, _newProps: any): boolean {
+  componentDidUpdate(_oldProps: ObjectLiteral, _newProps: ObjectLiteral): boolean {
     return _oldProps !== _newProps;
   }
 
