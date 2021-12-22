@@ -28,4 +28,3 @@ P.S.: Not all routes can be reached from ui, some of them can be reached only ma
 PR: https://github.com/timdancan/middle.messenger.praktikum.yandex/pull/4
 
 Netlify: https://silly-wing-ca82ef.netlify.app/
-
