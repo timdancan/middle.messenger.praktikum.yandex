@@ -1,0 +1,17 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": ["plugin:@typescript-eslint/recommended"],
+
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+
+  "plugins": ["@typescript-eslint"],
+
+  "globals": {
+    "document": "readonly",
+    "navigator": "readonly",
+    "window": "readonly"
+  }
+}
